@@ -1,0 +1,53 @@
+📋 DEPLOYMENT INSTRUCTIONS
+==========================
+
+Follow these steps to make your form work:
+
+STEP 1: Deploy Google Apps Script
+----------------------------------
+1. Open your Google Sheet:
+   https://docs.google.com/spreadsheets/d/1zKDfQoS-jCRZME_l4BE3rSrt2A5ZrXDg078QSBDEySQ/edit
+
+2. Click: Extensions → Apps Script
+
+3. Delete any existing code and paste the code from "Code.gs" file
+
+4. Click: Deploy → New deployment
+
+5. Click the gear icon ⚙️ → Select "Web app"
+
+6. Set:
+   - Execute as: Me
+   - Who has access: Anyone
+
+7. Click "Deploy" → "Authorize access" → Choose your Google account → "Allow"
+
+8. COPY THE WEB APP URL (it looks like: https://script.google.com/macros/s/AKfycby.../exec)
+
+
+STEP 2: Update script.js
+-------------------------
+1. Open script.js file
+
+2. Find line 3: const SCRIPT_URL = "PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE";
+
+3. Replace "PASTE_YOUR_GOOGLE_APPS_SCRIPT_URL_HERE" with the URL you copied in Step 1
+
+4. Save the file
+
+
+STEP 3: Test Your Form
+-----------------------
+1. Open index.html in your web browser
+
+2. Fill out the form and click "Submit Enquiry"
+
+3. Check your Google Sheet - the data should appear!
+
+
+✅ DONE! Your form is now connected to Google Sheets.
+
+If data doesn't appear, make sure:
+- You deployed the Apps Script correctly
+- You copied the correct URL (must end with /exec)
+- You pasted the URL in script.js line 3
