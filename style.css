@@ -53,6 +53,12 @@ input, textarea {
     border-radius: 10px;
     border: 2px solid #e5e7eb;
     font-size: 15px;
+    font-family: inherit;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
 }
 
 input:focus, textarea:focus {
