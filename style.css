@@ -102,3 +102,22 @@ input:focus, textarea:focus {
 .success-message.show {
     display: block;
 }
+select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 2px solid #e5e7eb;
+    font-size: 15px;
+    font-family: inherit;
+    background-color: white;
+    cursor: pointer;
+}
+
+select:focus {
+    border-color: #667eea;
+    outline: none;
+}
+
+select.error {
+    border-color: #ef4444;
+}
