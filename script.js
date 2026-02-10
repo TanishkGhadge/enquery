@@ -1,6 +1,6 @@
 const form = document.getElementById('enquiryForm');
 const successMessage = document.getElementById('successMessage');
-const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxNnVY_ue-D9y5tfE3cAWF6zhjt2UvDnhxnBJ8_Qus7tugfll7xMc1rCbDAFPDBk1L1/exec";
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwbMSLASlPeMTQmAADTssrInMNZ0vtQuHyjJh_pMp6vC6faEp6qTBdptLTvYwSi5QmF/exec";
 
 const companyPhones = {
     "Chit code": "7974544290",
@@ -22,7 +22,7 @@ form.addEventListener('submit', async (e) => {
     const data = {
         name: document.getElementById('name').value,
         phone: document.getElementById('phone').value,
-        whatsapp: document.getElementById('whatsapp').value,
+        WhatsApp_Number: document.getElementById('WhatsApp_Number').value,
         company: document.getElementById('company').value,
         address: document.getElementById('address').value,
         description: document.getElementById('description').value
@@ -70,7 +70,7 @@ function sendWhatsAppMessage(data) {
     };
     
     const message = companyMessages[data.company];
-    const whatsappURL = `https://wa.me/91${data.whatsapp}?text=${encodeURIComponent(message)}`;
+    const whatsappURL = `https://wa.me/91${data.WhatsApp_Number}?text=${encodeURIComponent(message)}`;
     window.open(whatsappURL, '_blank');
 }
 
@@ -80,7 +80,7 @@ function validateForm() {
 
     const name = document.getElementById('name');
     const phone = document.getElementById('phone');
-    const whatsapp = document.getElementById('whatsapp');
+    const whatsapp = document.getElementById('WhatsApp_Number');
     const company = document.getElementById('company');
     const address = document.getElementById('address');
     const description = document.getElementById('description');
@@ -105,12 +105,12 @@ function validateForm() {
         valid = false;
     }
 
-    const whatsappDigits = whatsapp.value.replace(/\D/g, '');
-    if (!whatsapp.value.trim()) {
-        showError(whatsapp, 'WhatsApp number is required');
+    const whatsappDigits = WhatsApp_Number.value.replace(/\D/g, '');
+    if (!WhatsApp_Number.value.trim()) {
+        showError(WhatsApp_Number, 'WhatsApp number is required');
         valid = false;
     } else if (whatsappDigits.length !== 10) {
-        showError(whatsapp, 'WhatsApp number must be exactly 10 digits');
+        showError(WhatsApp_Number, 'WhatsApp number must be exactly 10 digits');
         valid = false;
     }
 
@@ -161,7 +161,7 @@ document.getElementById('phone').addEventListener('input', function() {
     }
 });
 
-document.getElementById('whatsapp').addEventListener('input', function() {
+document.getElementById('WhatsApp_Number').addEventListener('input', function() {
     this.value = this.value.replace(/\D/g, '').slice(0, 10);
     if (this.classList.contains('error')) {
         this.classList.remove('error');
